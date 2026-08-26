@@ -1,0 +1,746 @@
+npx create-next-app@latest dreamland-developers
+TypeScript: Yes
+ESLint: Yes
+Tailwind CSS: Yes
+Use src directory: Yes
+Use App Router: Yes
+Use Turbopack: Yes
+Customize import alias: Yes
+Import alias: @/*
+cd dreamland-developers
+npm install framer-motion lucide-react react-hook-form
+dreamland-developers/
+├── src/
+│   ├── app/
+│   │   ├── about/
+│   │   │   └── page.tsx
+│   │   ├── contact/
+│   │   │   └── page.tsx
+│   │   ├── gallery/
+│   │   │   └── page.tsx
+│   │   ├── globals.css
+│   │   ├── layout.tsx
+│   │   ├── page.tsx
+│   │   ├── robots.ts
+│   │   └── sitemap.ts
+│   ├── components/
+│   │   ├── contact/
+│   │   │   └── ContactForm.tsx
+│   │   ├── home/
+│   │   │   ├── FeaturedProperties.tsx
+│   │   │   └── Hero.tsx
+│   │   └── layout/
+│   │       └── Navbar.tsx
+│   ├── data/
+│   │   └── properties.ts
+│   └── lib/
+│       └── constants.ts
+├── next.config.ts
+└── package.json
+export const siteConfig = {
+  name: 'Dreamland Developers',
+  description:
+    'Dreamland Developers creates premium plots, luxury villas, commercial spaces and strategic property investment opportunities in Jalandhar and Punjab.',
+  phone: '+916399280001',
+  displayPhone: '+91 63992 80001',
+  whatsapp: 'https://wa.me/916399280001',
+  youtube: 'https://www.youtube.com/@DreamLandDevelopers-x4q',
+  address: '66 Feet Road, Jalandhar, Punjab, India',
+  url: 'https://dreamlanddevelopers.in',
+};
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #f0d77a;
+  --ink: #101010;
+  --cream: #f8f7f3;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.font-display {
+  font-family: 'Playfair Display', serif;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.bg-gold {
+  background-color: var(--gold);
+}
+
+.luxury-gradient {
+  background:
+    linear-gradient(135deg, rgba(212, 175, 55, 0.2), transparent 50%),
+    linear-gradient(180deg, #171717, #050505);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+}
+
+.gold-line {
+  width: 64px;
+  height: 2px;
+  display: inline-block;
+  background: var(--gold);
+}
+
+::selection {
+  background: var(--gold);
+  color: #000;
+}
+import type { Metadata } from 'next';
+import './globals.css';
+import { siteConfig } from '@/lib/constants';
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: 'Dreamland Developers | Premium Real Estate in Jalandhar',
+    template: '%s | Dreamland Developers',
+  },
+  description: siteConfig.description,
+  keywords: [
+    'real estate in Jalandhar',
+    'residential plots Punjab',
+    'luxury villas Jalandhar',
+    'commercial property Jalandhar',
+    'Dreamland Developers',
+  ],
+  openGraph: {
+    title: 'Dreamland Developers',
+    description: siteConfig.description,
+    type: 'website',
+    locale: 'en_IN',
+    siteName: siteConfig.name,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    name: siteConfig.name,
+    telephone: siteConfig.displayPhone,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '66 Feet Road',
+      addressLocality: 'Jalandhar',
+      addressRegion: 'Punjab',
+      addressCountry: 'IN',
+    },
+    sameAs: [siteConfig.youtube],
+  };
+
+  return (
+    <html lang="en">
+      <body>
+        {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schema),
+          }}
+        />
+      </body>
+    </html>
+  );
+}
+export const properties = [
+  {
+    name: 'Dreamland Crown Residences',
+    location: 'Jalandhar, Punjab',
+    type: 'Luxury Villas',
+    price: '₹1.25 Cr onwards',
+    area: '2,400–4,800 sq. ft.',
+    image:
+      'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1400&q=85',
+  },
+  {
+    name: 'The Meridian Plots',
+    location: '66 Feet Road, Jalandhar',
+    type: 'Residential Plots',
+    price: '₹32 L onwards',
+    area: '125–400 sq. yd.',
+    image:
+      'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1400&q=85',
+  },
+  {
+    name: 'Dreamland Business District',
+    location: 'Jalandhar–Phagwara Highway',
+    type: 'Commercial Plots',
+    price: '₹75 L onwards',
+    area: '500–2,000 sq. yd.',
+    image:
+      'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1400&q=85',
+  },
+  {
+    name: 'The Grand Courtyard',
+    location: 'Jalandhar, Punjab',
+    type: 'Farm Houses',
+    price: '₹90 L onwards',
+    area: '1–4 acres',
+    image:
+      'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85',
+  },
+];
+'use client';
+
+import Link from 'next/link';
+import { Menu, Phone, X } from 'lucide-react';
+import { useState } from 'react';
+import { siteConfig } from '@/lib/constants';
+
+export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { label: 'Home', href: '/' },
+    { label: 'About', href: '/about' },
+    { label: 'Gallery', href: '/gallery' },
+    { label: 'Contact', href: '/contact' },
+  ];
+
+  return (
+    <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/15 bg-black/70 px-5 py-3 text-white shadow-2xl backdrop-blur-xl">
+        <Link href="/" className="flex items-center gap-3">
+          <span className="grid h-10 w-10 place-items-center rounded-full bg-gold font-display text-xl text-black">
+            D
+          </span>
+
+          <span className="hidden font-display text-lg sm:block">
+            Dreamland <span className="text-gold">Developers</span>
+          </span>
+        </Link>
+
+        <div className="hidden items-center gap-8 md:flex">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="text-sm text-white/75 transition hover:text-gold"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="hidden items-center gap-3 sm:flex">
+          <a
+            href={`tel:${siteConfig.phone}`}
+            className="flex items-center gap-2 rounded-full border border-gold px-4 py-2 text-sm text-gold transition hover:bg-gold hover:text-black"
+          >
+            <Phone size={15} />
+            Call Now
+          </a>
+
+          <a
+            href={siteConfig.whatsapp}
+            target="_blank"
+            rel="noreferrer"
+            className="rounded-full bg-gold px-4 py-2 text-sm font-semibold text-black transition hover:bg-[#f0d77a]"
+          >
+            WhatsApp
+          </a>
+        </div>
+
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden"
+          aria-label="Toggle navigation"
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+
+        {open && (
+          <div className="absolute left-4 right-4 top-16 rounded-3xl border border-white/10 bg-black p-5 md:hidden">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setOpen(false)}
+                className="block border-b border-white/10 py-4 text-white/80"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </nav>
+    </header>
+  );
+}
+'use client';
+
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Play } from 'lucide-react';
+
+export default function Hero() {
+  return (
+    <section className="relative flex min-h-screen items-end overflow-hidden bg-black text-white">
+      <img
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=90"
+        alt="Luxury Dreamland Developers residence"
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 lg:pb-28">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          className="max-w-4xl"
+        >
+          <div className="mb-6 flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-gold">
+            <span className="gold-line" />
+            Dreamland Developers
+          </div>
+
+          <h1 className="font-display text-5xl leading-[1.05] sm:text-7xl lg:text-8xl">
+            Building Dreams.
+            <br />
+            <span className="text-gold">Creating Landmarks.</span>
+          </h1>
+
+          <p className="mt-7 max-w-xl text-lg leading-8 text-white/70">
+            Premium plots, luxury villas, commercial spaces and smart
+            investment opportunities designed for the future.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/gallery"
+              className="flex items-center gap-3 rounded-full bg-gold px-6 py-3 font-semibold text-black transition hover:bg-[#f0d77a]"
+            >
+              Explore Properties
+              <ArrowUpRight size={18} />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="flex items-center gap-3 rounded-full border border-white/40 px-6 py-3 transition hover:border-gold hover:text-gold"
+            >
+              <Play size={16} />
+              Contact Us
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+npm run dev
+http://localhost:3000
+dreamland-developers
+git init
+git add .
+git commit -m "Create Dreamland Developers luxury real estate website"
+git branch -M main
+git remote add origin https://github.com/YOUR-USERNAME/dreamland-developers.git
+git push -u origin main
+public/images/
+public/
+└── images/
+    ├── hero.jpg
+    ├── about.jpg
+    ├── villa-1.jpg
+    ├── villa-2.jpg
+    ├── plots-1.jpg
+    ├── plots-2.jpg
+    ├── commercial-1.jpg
+    ├── commercial-2.jpg
+    ├── farmhouse-1.jpg
+    ├── apartment-1.jpg
+    ├── site-visit-1.jpg
+    └── construction-1.jpg
+public/images/hero.jpg
+public/images/hero.jpg
+/images/hero.jpg
+'use client';
+
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+import { ArrowUpRight, Play } from 'lucide-react';
+
+export default function Hero() {
+  return (
+    <section className="relative flex min-h-screen items-end overflow-hidden bg-black text-white">
+      <img
+        src="/images/hero.jpg"
+        alt="Luxury property by Dreamland Developers"
+        className="absolute inset-0 h-full w-full object-cover opacity-70"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-black/10" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20" />
+
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-40 lg:pb-28">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9 }}
+          className="max-w-4xl"
+        >
+          <div className="mb-6 flex items-center gap-3 text-sm uppercase tracking-[0.3em] text-gold">
+            <span className="gold-line" />
+            Dreamland Developers
+          </div>
+
+          <h1 className="font-display text-5xl leading-[1.05] sm:text-7xl lg:text-8xl">
+            Building Dreams.
+            <br />
+            <span className="text-gold">Creating Landmarks.</span>
+          </h1>
+
+          <p className="mt-7 max-w-xl text-lg leading-8 text-white/70">
+            Premium Plots, Luxury Villas, Commercial Spaces & Smart Investment
+            Opportunities.
+          </p>
+
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/gallery"
+              className="flex items-center gap-3 rounded-full bg-gold px-6 py-3 font-semibold text-black transition hover:bg-[#f0d77a]"
+            >
+              Explore Properties
+              <ArrowUpRight size={18} />
+            </Link>
+
+            <Link
+              href="/contact"
+              className="flex items-center gap-3 rounded-full border border-white/40 px-6 py-3 transition hover:border-gold hover:text-gold"
+            >
+              <Play size={16} />
+              Contact Us
+            </Link>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
+export const properties = [
+  {
+    name: 'Dreamland Crown Residences',
+    location: 'Jalandhar, Punjab',
+    type: 'Luxury Villas',
+    price: '₹1.25 Cr onwards',
+    area: '2,400–4,800 sq. ft.',
+    image: '/images/villa-1.jpg',
+  },
+  {
+    name: 'The Meridian Plots',
+    location: '66 Feet Road, Jalandhar',
+    type: 'Residential Plots',
+    price: '₹32 L onwards',
+    area: '125–400 sq. yd.',
+    image: '/images/plots-1.jpg',
+  },
+  {
+    name: 'Dreamland Business District',
+    location: 'Jalandhar–Phagwara Highway',
+    type: 'Commercial Plots',
+    price: '₹75 L onwards',
+    area: '500–2,000 sq. yd.',
+    image: '/images/commercial-1.jpg',
+  },
+  {
+    name: 'The Grand Courtyard',
+    location: 'Jalandhar, Punjab',
+    type: 'Farm Houses',
+    price: '₹90 L onwards',
+    area: '1–4 acres',
+    image: '/images/farmhouse-1.jpg',
+  },
+];
+import Image from 'next/image';
+<img
+  src={property.image}
+  alt={property.name}
+  loading="lazy"
+  className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+/>
+<Image
+  src={property.image}
+  alt={`${property.name} - Dreamland Developers`}
+  fill
+  sizes="(max-width: 768px) 100vw, 50vw"
+  className="object-cover transition duration-700 group-hover:scale-105"
+/>
+<div className="relative h-80 overflow-hidden">
+  <Image
+    src={property.image}
+    alt={`${property.name} - Dreamland Developers`}
+    fill
+    sizes="(max-width: 768px) 100vw, 50vw"
+    className="object-cover transition duration-700 group-hover:scale-105"
+  />
+
+  <div className="absolute left-5 top-5 rounded-full bg-black/70 px-4 py-2 text-xs text-gold backdrop-blur">
+    {property.type}
+  </div>
+</div>
+public/images/about.jpg
+import Image from 'next/image';
+
+export default function AboutPage() {
+  return (
+    <main className="bg-[#f8f7f3] px-6 pb-24 pt-36">
+      <section className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-2">
+        <div>
+          <p className="mb-5 text-sm uppercase tracking-[0.25em] text-gold">
+            About Dreamland Developers
+          </p>
+
+          <h1 className="font-display text-5xl leading-tight sm:text-7xl">
+            Creating spaces with purpose.
+          </h1>
+
+          <p className="mt-6 text-lg leading-8 text-black/60">
+            Dreamland Developers is committed to delivering premium property
+            opportunities with transparency, quality, and long-term value.
+          </p>
+        </div>
+
+        <div className="relative h-[500px] overflow-hidden rounded-3xl">
+          <Image
+            src="/images/about.jpg"
+            alt="Dreamland Developers property development"
+            fill
+            priority
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+        </div>
+      </section>
+    </main>
+  );
+}
+public/images/gallery/
+├── residential-1.jpg
+├── residential-2.jpg
+├── commercial-1.jpg
+├── commercial-2.jpg
+├── villa-1.jpg
+├── villa-2.jpg
+├── plot-1.jpg
+├── plot-2.jpg
+├── site-visit-1.jpg
+└── construction-1.jpg
+export const galleryImages = [
+  {
+    src: '/images/gallery/residential-1.jpg',
+    title: 'Premium Residential Development',
+    category: 'Residential Properties',
+  },
+  {
+    src: '/images/gallery/residential-2.jpg',
+    title: 'Residential Project',
+    category: 'Residential Properties',
+  },
+  {
+    src: '/images/gallery/commercial-1.jpg',
+    title: 'Commercial Property',
+    category: 'Commercial Properties',
+  },
+  {
+    src: '/images/gallery/commercial-2.jpg',
+    title: 'Business District',
+    category: 'Commercial Properties',
+  },
+  {
+    src: '/images/gallery/villa-1.jpg',
+    title: 'Luxury Villa',
+    category: 'Luxury Villas',
+  },
+  {
+    src: '/images/gallery/villa-2.jpg',
+    title: 'Premium Residence',
+    category: 'Luxury Villas',
+  },
+  {
+    src: '/images/gallery/plot-1.jpg',
+    title: 'Residential Plot',
+    category: 'Premium Plots',
+  },
+  {
+    src: '/images/gallery/plot-2.jpg',
+    title: 'Development Land',
+    category: 'Premium Plots',
+  },
+  {
+    src: '/images/gallery/site-visit-1.jpg',
+    title: 'Client Site Visit',
+    category: 'Site Visits',
+  },
+  {
+    src: '/images/gallery/construction-1.jpg',
+    title: 'Construction Progress',
+    category: 'Ongoing Projects',
+  },
+];
+'use client';
+
+import Image from 'next/image';
+import { useState } from 'react';
+import Navbar from '@/components/layout/Navbar';
+import { galleryImages } from '@/data/gallery';
+
+const categories = [
+  'All',
+  'Residential Properties',
+  'Commercial Properties',
+  'Luxury Villas',
+  'Premium Plots',
+  'Site Visits',
+  'Ongoing Projects',
+];
+
+export default function GalleryPage() {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const filteredImages =
+    activeCategory === 'All'
+      ? galleryImages
+      : galleryImages.filter((image) => image.category === activeCategory);
+
+  return (
+    <>
+      <Navbar />
+
+      <main className="bg-[#f8f7f3] px-6 pb-24 pt-36">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12">
+            <p className="mb-5 text-sm uppercase tracking-[0.25em] text-gold">
+              Explore Dreamland
+            </p>
+
+            <h1 className="font-display text-5xl sm:text-7xl">
+              Our gallery
+            </h1>
+
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-black/60">
+              Discover our residential, commercial, luxury and investment
+              property opportunities.
+            </p>
+          </div>
+
+          <div className="mb-10 flex flex-wrap gap-3">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`rounded-full px-5 py-2 text-sm transition ${
+                  activeCategory === category
+                    ? 'bg-black text-white'
+                    : 'border border-black/15 bg-white hover:border-gold'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <div className="columns-1 gap-5 sm:columns-2 lg:columns-3">
+            {filteredImages.map((image) => (
+              <button
+                key={image.src}
+                onClick={() => setSelectedImage(image.src)}
+                className="group relative mb-5 block w-full overflow-hidden rounded-3xl text-left"
+              >
+                <Image
+                  src={image.src}
+                  alt={image.title}
+                  width={1000}
+                  height={800}
+                  loading="lazy"
+                  className="h-auto w-full transition duration-700 group-hover:scale-105"
+                />
+
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent p-5 pt-16 text-white">
+                  <p className="font-display text-xl">{image.title}</p>
+                  <p className="mt-1 text-xs text-gold">{image.category}</p>
+                </div>
+              </button>
+            ))}
+          </div>
+        </div>
+      </main>
+
+      {selectedImage && (
+        <div
+          onClick={() => setSelectedImage(null)}
+          className="fixed inset-0 z-[100] grid place-items-center bg-black/90 p-6"
+        >
+          <Image
+            src={selectedImage}
+            alt="Selected Dreamland Developers property"
+            width={1600}
+            height={1200}
+            className="max-h-[90vh] w-auto rounded-2xl object-contain"
+          />
+        </div>
+      )}
+    </>
+  );
+}
+Hero image:       2200 × 1400 px
+Property images:  1400 × 1000 px
+Gallery images:   1400 × 1000 px
+About image:      1400 × 1600 px
+.jpg
+.webp
+.png
+public/images/hero.webp
+src="/images/hero.webp"
+src="public/images/hero.webp"
+npm run dev
+git add .
+git commit -m "Add Dreamland Developers images and gallery"
+git push
