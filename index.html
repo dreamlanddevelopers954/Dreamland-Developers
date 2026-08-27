@@ -1,1530 +1,1255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Dreamland Developers | Premium Properties & Real Estate</title>
-
-  <meta name="description" content="Dreamland Developers - Discover premium residential and commercial properties with trusted real estate solutions.">
-  <meta name="keywords" content="Dreamland Developers, real estate, property, residential property, commercial property, plots, apartments, Punjab">
-  <meta name="author" content="Dreamland Developers">
-
-  <meta property="og:title" content="Dreamland Developers">
-  <meta property="og:description" content="Find your dream property with Dreamland Developers.">
-  <meta property="og:type" content="website">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f7f5;
-      color: #17251d;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(1180px, 92%);
-      margin: auto;
-    }
-
-    /* NAVBAR */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.08);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      font-size: 23px;
-      font-weight: 800;
-      letter-spacing: -0.5px;
-      color: #183b2a;
-      white-space: nowrap;
-    }
-
-    .logo span {
-      color: #b58b45;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 14px;
-      font-weight: 600;
-      color: #29352e;
-      transition: 0.25s;
-    }
-
-    .nav-links a:hover {
-      color: #b58b45;
-    }
-
-    .nav-btn {
-      background: #183b2a;
-      color: white !important;
-      padding: 12px 20px;
-      border-radius: 30px;
-    }
-
-    .nav-btn:hover {
-      background: #b58b45;
-    }
-
-    .menu-btn {
-      display: none;
-      border: none;
-      background: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 100vh;
-      padding-top: 76px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(110deg, rgba(10,30,20,0.94), rgba(17,49,34,0.78)),
-        url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=85")
-        center/cover;
-    }
-
-    .hero-content {
-      color: white;
-      max-width: 760px;
-      padding: 90px 0;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: #e0bc79;
-      font-size: 13px;
-      letter-spacing: 2.5px;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(48px, 7vw, 86px);
-      line-height: 0.98;
-      letter-spacing: -3px;
-      margin-bottom: 28px;
-    }
-
-    .hero h1 span {
-      color: #d5ae69;
-    }
-
-    .hero p {
-      max-width: 620px;
-      font-size: 18px;
-      color: rgba(255,255,255,0.86);
-      margin-bottom: 35px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px 25px;
-      border-radius: 4px;
-      font-weight: 700;
-      transition: 0.25s;
-      border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: #c39a55;
-      color: white;
-    }
-
-    .btn-primary:hover {
-      background: #a77e3f;
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      border-color: rgba(255,255,255,0.55);
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #183b2a;
-    }
-
-    /* STATS */
-
-    .stats {
-      background: #183b2a;
-      color: white;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .stat {
-      padding: 30px 20px;
-      text-align: center;
-      border-right: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .stat:last-child {
-      border-right: none;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 30px;
-      color: #d5ae69;
-      margin-bottom: 3px;
-    }
-
-    .stat span {
-      font-size: 13px;
-      color: rgba(255,255,255,0.75);
-    }
-
-    /* SECTIONS */
-
-    section {
-      padding: 100px 0;
-    }
-
-    .section-heading {
-      max-width: 680px;
-      margin-bottom: 50px;
-    }
-
-    .section-heading.center {
-      text-align: center;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .section-label {
-      color: #b58b45;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(36px, 5vw, 55px);
-      line-height: 1.05;
-      color: #183b2a;
-      margin-bottom: 18px;
-    }
-
-    .section-heading p {
-      color: #68736c;
-      font-size: 16px;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .about-image {
-      min-height: 530px;
-      border-radius: 6px;
-      background:
-        linear-gradient(rgba(15,40,26,0.08), rgba(15,40,26,0.08)),
-        url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1200&q=85")
-        center/cover;
-    }
-
-    .about-text p {
-      color: #5e6861;
-      margin-bottom: 20px;
-      font-size: 16px;
-    }
-
-    .check-list {
-      list-style: none;
-      margin: 25px 0;
-    }
-
-    .check-list li {
-      margin: 12px 0;
-      font-weight: 600;
-      color: #334139;
-    }
-
-    .check-list li::before {
-      content: "✓";
-      color: #b58b45;
-      font-weight: 900;
-      margin-right: 12px;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: #edf0eb;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: white;
-      padding: 38px 30px;
-      border: 1px solid #e2e5e1;
-      transition: 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    }
-
-    .service-icon {
-      width: 52px;
-      height: 52px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #183b2a;
-      color: #d5ae69;
-      font-size: 22px;
-      margin-bottom: 23px;
-    }
-
-    .service-card h3 {
-      color: #183b2a;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      margin-bottom: 12px;
-    }
-
-    .service-card p {
-      color: #6c756f;
-      font-size: 14px;
-    }
-
-    /* PROPERTIES */
-
-    .property-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
-
-    .property-card {
-      background: white;
-      border: 1px solid #e5e6e3;
-      overflow: hidden;
-      transition: 0.3s;
-    }
-
-    .property-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.08);
-    }
-
-    .property-image {
-      height: 245px;
-      position: relative;
-      background-size: cover;
-      background-position: center;
-    }
-
-    .property-image.one {
-      background-image: url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85");
-    }
-
-    .property-image.two {
-      background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85");
-    }
-
-    .property-image.three {
-      background-image: url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85");
-    }
-
-    .property-tag {
-      position: absolute;
-      top: 16px;
-      left: 16px;
-      background: #183b2a;
-      color: white;
-      padding: 7px 12px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .property-info {
-      padding: 25px;
-    }
-
-    .property-info h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      color: #183b2a;
-      margin-bottom: 8px;
-    }
-
-    .property-info p {
-      color: #707970;
-      font-size: 14px;
-      margin-bottom: 18px;
-    }
-
-    .property-bottom {
-      border-top: 1px solid #eceeeb;
-      padding-top: 15px;
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .property-bottom strong {
-      color: #b58b45;
-    }
-
-    .property-bottom span {
-      color: #707970;
-      font-size: 13px;
-    }
-
-    /* WHY US */
-
-    .why {
-      background: #183b2a;
-      color: white;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-      gap: 70px;
-      align-items: center;
-    }
-
-    .why h2 {
-      color: white;
-    }
-
-    .why-intro {
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 30px;
-    }
-
-    .why-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-    }
-
-    .why-item {
-      padding: 22px;
-      border: 1px solid rgba(255,255,255,0.14);
-    }
-
-    .why-item strong {
-      display: block;
-      color: #d5ae69;
-      margin-bottom: 6px;
-    }
-
-    .why-item p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.68);
-    }
-
-    /* CTA */
-
-    .cta {
-      background:
-        linear-gradient(rgba(17,48,33,0.92), rgba(17,48,33,0.92)),
-        url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85")
-        center/cover;
-      text-align: center;
-      color: white;
-    }
-
-    .cta h2 {
-      color: white;
-      max-width: 750px;
-      margin: 0 auto 20px;
-    }
-
-    .cta p {
-      max-width: 600px;
-      margin: 0 auto 30px;
-      color: rgba(255,255,255,0.78);
-    }
-
-    /* CONTACT */
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 60px;
-    }
-
-    .contact-info {
-      padding-right: 20px;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 16px;
-      margin: 25px 0;
-    }
-
-    .contact-icon {
-      width: 45px;
-      height: 45px;
-      flex: 0 0 45px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #edf0eb;
-      color: #183b2a;
-      font-weight: bold;
-    }
-
-    .contact-item strong {
-      display: block;
-      color: #183b2a;
-      margin-bottom: 3px;
-    }
-
-    .contact-item span {
-      color: #68736c;
-      font-size: 14px;
-    }
-
-    .contact-form {
-      background: #f1f3ef;
-      padding: 35px;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-      width: 100%;
-      padding: 15px;
-      border: 1px solid #d9ddd8;
-      background: white;
-      margin-bottom: 15px;
-      outline: none;
-      font: inherit;
-    }
-
-    .contact-form textarea {
-      min-height: 130px;
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-      border-color: #b58b45;
-    }
-
-    .submit-btn {
-      width: 100%;
-      border: none;
-      cursor: pointer;
-      font-size: 15px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #10291d;
-      color: white;
-      padding: 55px 0 25px;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 50px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid rgba(255,255,255,0.12);
-    }
-
-    .footer-logo {
-      font-size: 25px;
-      font-weight: 800;
-      margin-bottom: 15px;
-    }
-
-    .footer-logo span {
-      color: #d5ae69;
-    }
-
-    footer p {
-      color: rgba(255,255,255,0.65);
-      font-size: 14px;
-    }
-
-    footer h4 {
-      margin-bottom: 15px;
-      color: #d5ae69;
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin: 9px 0;
-    }
-
-    .footer-links a {
-      color: rgba(255,255,255,0.65);
-      font-size: 14px;
-    }
-
-    .footer-links a:hover {
-      color: white;
-    }
-
-    .copyright {
-      text-align: center;
-      padding-top: 22px;
-      color: rgba(255,255,255,0.45);
-      font-size: 12px;
-    }
-
-    /* FLOATING BUTTONS */
-
-    .floating {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 900;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .float-btn {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-    }
-
-    .whatsapp {
-      background: #198754;
-    }
-
-    .call {
-      background: #183b2a;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
-
-      .nav-links {
-        position: absolute;
-        top: 76px;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 20px;
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 17px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .stat:nth-child(2) {
-        border-right: none;
-      }
-
-      .stat {
-        border-bottom: 1px solid rgba(255,255,255,0.14);
-      }
-
-      .about-grid,
-      .why-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid,
-      .property-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      section {
-        padding: 70px 0;
-      }
-
-      .hero h1 {
-        letter-spacing: -2px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .stats-grid,
-      .service-grid,
-      .property-grid,
-      .footer-grid,
-      .why-list,
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .stat {
-        border-right: none;
-      }
-
-      .about-image {
-        min-height: 360px;
-      }
-
-      .contact-form {
-        padding: 22px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dream Land Developers | Premium Properties in Jalandhar</title>
+
+<meta name="description" content="Dream Land Developers offers plots, villas, lands, residential and commercial property opportunities in Jalandhar.">
+<meta name="keywords" content="Dream Land Developers, properties in Jalandhar, plots in Jalandhar, villas in Jalandhar, land in Jalandhar, residential property, commercial property">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b0f14;
+    color:#fff;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(5,8,12,.96);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.nav-inner{
+    height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#d6a84f;
+}
+
+.nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:#ddd;
+    font-size:15px;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#d6a84f;
+}
+
+.menu-btn{
+    display:none;
+    font-size:27px;
+    cursor:pointer;
+}
+
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(4,7,10,.72),rgba(4,7,10,.90)),
+    radial-gradient(circle at center,#263445,#080b10 70%);
+    padding-top:75px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.hero-small{
+    color:#d6a84f;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.hero h1{
+    font-size:clamp(45px,7vw,82px);
+    line-height:1.05;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#d6a84f;
+}
+
+.hero p{
+    color:#c7c7c7;
+    max-width:650px;
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 28px;
+    border-radius:4px;
+    background:#d6a84f;
+    color:#111;
+    font-weight:bold;
+    margin-right:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+    background:#f0c86e;
+}
+
+.btn-outline{
+    background:transparent;
+    color:#fff;
+    border:1px solid #d6a84f;
+}
+
+
+/* STATS */
+
+.stats{
+    display:flex;
+    gap:65px;
+    margin-top:45px;
+}
+
+.stat{
+    border-left:2px solid #d6a84f;
+    padding-left:18px;
+}
+
+.stat h3{
+    font-size:40px;
+    line-height:1;
+    color:#d6a84f;
+    margin-bottom:7px;
+}
+
+.stat p{
+    color:#aaa;
+    font-size:14px;
+    margin:0;
+}
+
+
+/* GENERAL */
+
+section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:55px;
+}
+
+.section-title small{
+    color:#d6a84f;
+    text-transform:uppercase;
+    letter-spacing:3px;
+}
+
+.section-title h2{
+    font-size:42px;
+    margin-top:8px;
+}
+
+.section-title p{
+    color:#aaa;
+    max-width:650px;
+    margin:12px auto;
+}
+
+
+/* ABOUT */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.about-image{
+    min-height:420px;
+    border-radius:12px;
+    background:
+    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.5)),
+    linear-gradient(135deg,#343b45,#111820);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:90px;
+    color:#d6a84f;
+}
+
+.about-text h3{
+    font-size:32px;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#aaa;
+    margin-bottom:18px;
+}
+
+
+/* SERVICES */
+
+.services{
+    background:#0f141b;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:#151b23;
+    border:1px solid rgba(255,255,255,.07);
+    padding:35px 28px;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    border-color:#d6a84f;
+}
+
+.card-icon{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.card h3{
+    font-size:22px;
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#999;
+}
+
+
+/* PROPERTIES */
+
+.property-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.property{
+    background:#151b23;
+    border-radius:12px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.07);
+    transition:.3s;
+}
+
+.property:hover{
+    transform:translateY(-6px);
+    border-color:#d6a84f;
+}
+
+.property-img{
+    height:220px;
+    background:
+    linear-gradient(135deg,#414a56,#171c23);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:55px;
+}
+
+.property-content{
+    padding:25px;
+}
+
+.property-content h3{
+    font-size:24px;
+    margin-bottom:10px;
+}
+
+.property-content p{
+    color:#999;
+    margin-bottom:18px;
+}
+
+.property-tag{
+    display:inline-block;
+    color:#d6a84f;
+    border:1px solid #d6a84f;
+    padding:5px 10px;
+    border-radius:20px;
+    font-size:12px;
+}
+
+
+/* GALLERY */
+
+.gallery{
+    background:#0f141b;
+}
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.gallery-item{
+    height:240px;
+    border-radius:10px;
+    overflow:hidden;
+    background:linear-gradient(135deg,#3c4651,#151b22);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:50px;
+    color:#d6a84f;
+    transition:.3s;
+}
+
+.gallery-item:hover{
+    transform:scale(1.02);
+}
+
+
+/* CONTACT */
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+}
+
+.contact-box{
+    background:#151b23;
+    padding:35px;
+    border-radius:12px;
+}
+
+.contact-box h3{
+    font-size:28px;
+    margin-bottom:25px;
+}
+
+.contact-item{
+    margin-bottom:22px;
+}
+
+.contact-item strong{
+    display:block;
+    color:#d6a84f;
+    margin-bottom:4px;
+}
+
+.contact-item span{
+    color:#bbb;
+}
+
+.contact-buttons{
+    margin-top:25px;
+}
+
+.map-box{
+    min-height:400px;
+    border-radius:12px;
+    background:linear-gradient(135deg,#252f3a,#10151b);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#aaa;
+    padding:30px;
+}
+
+.map-box h3{
+    color:#fff;
+    margin-bottom:10px;
+}
+
+
+/* CTA */
+
+.cta{
+    background:linear-gradient(135deg,#1d2630,#0c1015);
+    text-align:center;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#aaa;
+    margin-bottom:30px;
+}
+
+
+/* FOOTER */
+
+footer{
+    background:#05070a;
+    padding:50px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    margin-bottom:40px;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer li{
+    color:#888;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin-bottom:8px;
+}
+
+.copyright{
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:20px;
+    text-align:center;
+    color:#666;
+    font-size:14px;
+}
+
+
+/* MOBILE */
+
+@media(max-width:850px){
+
+    .nav-links{
+        position:absolute;
+        top:75px;
+        left:0;
+        width:100%;
+        background:#080b10;
+        flex-direction:column;
+        padding:25px;
+        display:none;
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .about-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards,
+    .property-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .gallery-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:550px){
+
+    .cards,
+    .property-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .section-title h2{
+        font-size:34px;
+    }
+
+    .btn{
+        margin-bottom:10px;
+    }
+
+    .stats{
+        gap:30px;
+    }
+
+    .stat h3{
+        font-size:32px;
+    }
+}
+
+</style>
 </head>
+
 
 <body>
 
-  <!-- NAVIGATION -->
 
-  <header>
-    <div class="container nav">
+<!-- NAVIGATION -->
 
-      <a href="#home" class="logo">
-        DREAMLAND <span>DEVELOPERS</span>
-      </a>
+<nav>
 
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">
-        ☰
-      </button>
+<div class="container nav-inner">
 
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#properties">Properties</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a href="#contact" class="nav-btn">Enquire Now</a>
-        </li>
-      </ul>
+<div class="logo">
+DREAM <span>LAND</span>
+</div>
 
-    </div>
-  </header>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
 
+<ul class="nav-links" id="navLinks">
 
-  <!-- HERO -->
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
 
-  <main>
+</ul>
 
-    <section class="hero" id="home">
+</div>
 
-      <div class="container">
+</nav>
 
-        <div class="hero-content">
 
-          <div class="eyebrow">
-            Your Trusted Real Estate Partner
-          </div>
+<!-- HOME -->
 
-          <h1>
-            Build Your<br>
-            <span>Dream Future.</span>
-          </h1>
+<section class="hero" id="home">
 
-          <p>
-            Discover thoughtfully selected residential and commercial
-            properties designed for comfortable living and long-term value.
-          </p>
+<div class="container hero-content">
 
-          <div class="hero-buttons">
-            <a href="#properties" class="btn btn-primary">
-              Explore Properties
-            </a>
+<div class="hero-small">
+Dream Land Developers
+</div>
 
-            <a href="#contact" class="btn btn-outline">
-              Talk To Us
-            </a>
-          </div>
+<h1>
+Build Your <span>Dream.</span><br>
+Own Your Future.
+</h1>
 
-        </div>
+<p>
+Discover residential, commercial and investment
+property opportunities with Dream Land Developers.
+Find plots, villas, land and more in Jalandhar.
+</p>
 
-      </div>
+<a href="#properties" class="btn">
+Explore Properties
+</a>
 
-    </section>
+<a href="tel:6399280001" class="btn btn-outline">
+Call 63992 80001
+</a>
 
 
-    <!-- STATS -->
+<!-- STATS -->
 
-    <div class="stats">
+<div class="stats">
 
-      <div class="container stats-grid">
+<div class="stat">
+<h3>200+</h3>
+<p>Happy Clients</p>
+</div>
 
-        <div class="stat">
-          <strong>100+</strong>
-          <span>Happy Clients</span>
-        </div>
+<div class="stat">
+<h3>500+</h3>
+<p>Projects</p>
+</div>
 
-        <div class="stat">
-          <strong>50+</strong>
-          <span>Properties</span>
-        </div>
+</div>
 
-        <div class="stat">
-          <strong>10+</strong>
-          <span>Years Experience</span>
-        </div>
+</div>
 
-        <div class="stat">
-          <strong>100%</strong>
-          <span>Commitment</span>
-        </div>
+</section>
 
-      </div>
 
-    </div>
+<!-- ABOUT -->
 
+<section id="about">
 
-    <!-- ABOUT -->
+<div class="container">
 
-    <section id="about">
+<div class="section-title">
 
-      <div class="container about-grid">
+<small>Who We Are</small>
 
-        <div class="about-image"></div>
+<h2>About Dream Land Developers</h2>
 
-        <div class="about-text">
+<p>
+Building opportunities for better living and smarter property decisions.
+</p>
 
-          <div class="section-label">
-            About Dreamland
-          </div>
+</div>
 
-          <h2>
-            Property decisions made with confidence.
-          </h2>
 
-          <p>
-            Dreamland Developers is focused on helping people find
-            properties that match their lifestyle, goals and investment
-            plans.
-          </p>
+<div class="about-grid">
 
-          <p>
-            We believe real estate should be simple, transparent and
-            focused on creating lasting value for our clients.
-          </p>
+<div class="about-image">
+🏡
+</div>
 
-          <ul class="check-list">
-            <li>Residential & Commercial Properties</li>
-            <li>Professional Property Guidance</li>
-            <li>Transparent Deal Process</li>
-            <li>Customer-Focused Approach</li>
-          </ul>
 
-          <a href="#contact" class="btn btn-primary">
-            Know More
-          </a>
+<div class="about-text">
 
-        </div>
+<h3>Your Property. Your Dream.</h3>
 
-      </div>
+<p>
+Dream Land Developers is focused on helping customers
+discover residential and commercial property opportunities
+that match their requirements.
+</p>
 
-    </section>
+<p>
+From plots and villas to land and other property options,
+our goal is to make the property-search experience simple,
+professional and transparent.
+</p>
 
+<a href="#contact" class="btn">
+Talk To Us
+</a>
 
-    <!-- SERVICES -->
+</div>
 
-    <section class="services" id="services">
+</div>
 
-      <div class="container">
+</div>
 
-        <div class="section-heading center">
+</section>
 
-          <div class="section-label">
-            What We Do
-          </div>
 
-          <h2>
-            Real Estate Solutions
-          </h2>
+<!-- SERVICES -->
 
-          <p>
-            From finding the right property to making an informed
-            investment decision, we're here to help.
-          </p>
+<section class="services" id="services">
 
-        </div>
+<div class="container">
 
+<div class="section-title">
 
-        <div class="service-grid">
+<small>What We Do</small>
 
-          <div class="service-card">
+<h2>Our Services</h2>
 
-            <div class="service-icon">⌂</div>
+<p>
+Property solutions designed around your needs.
+</p>
 
-            <h3>
-              Residential Properties
-            </h3>
+</div>
 
-            <p>
-              Explore homes, plots and residential opportunities
-              suitable for families and future growth.
-            </p>
 
-          </div>
+<div class="cards">
 
 
-          <div class="service-card">
+<div class="card">
 
-            <div class="service-icon">▦</div>
+<div class="card-icon">🏘️</div>
 
-            <h3>
-              Commercial Properties
-            </h3>
+<h3>Residential Properties</h3>
 
-            <p>
-              Discover commercial spaces and investment opportunities
-              selected with business potential in mind.
-            </p>
+<p>
+Explore residential plots, homes, villas and
+other property opportunities.
+</p>
 
-          </div>
+</div>
 
 
-          <div class="service-card">
+<div class="card">
 
-            <div class="service-icon">◆</div>
+<div class="card-icon">🏢</div>
 
-            <h3>
-              Property Consultation
-            </h3>
+<h3>Commercial Properties</h3>
 
-            <p>
-              Get guidance throughout your property journey so you
-              can make decisions with greater confidence.
-            </p>
+<p>
+Explore commercial property options suitable
+for business and investment requirements.
+</p>
 
-          </div>
+</div>
 
-        </div>
 
-      </div>
+<div class="card">
 
-    </section>
+<div class="card-icon">🌳</div>
 
+<h3>Land & Plots</h3>
 
-    <!-- PROPERTIES -->
+<p>
+Explore land and plot opportunities in different
+locations and sizes.
+</p>
 
-    <section id="properties">
+</div>
 
-      <div class="container">
 
-        <div class="section-heading">
+<div class="card">
 
-          <div class="section-label">
-            Featured Opportunities
-          </div>
+<div class="card-icon">🏠</div>
 
-          <h2>
-            Find a place worth investing in.
-          </h2>
+<h3>Villas</h3>
 
-          <p>
-            Browse some of the property categories available through
-            Dreamland Developers.
-          </p>
+<p>
+Discover villa options designed for comfortable
+modern living.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="property-grid">
+<div class="card">
 
-          <article class="property-card">
+<div class="card-icon">📋</div>
 
-            <div class="property-image one">
-              <div class="property-tag">Residential</div>
-            </div>
+<h3>Property Consultation</h3>
 
-            <div class="property-info">
+<p>
+Get assistance in understanding property options
+according to your requirements.
+</p>
 
-              <h3>
-                Premium Residences
-              </h3>
+</div>
 
-              <p>
-                Modern residential opportunities in promising locations.
-              </p>
 
-              <div class="property-bottom">
-                <strong>Enquire Now</strong>
-                <span>Available</span>
-              </div>
+<div class="card">
 
-            </div>
+<div class="card-icon">🤝</div>
 
-          </article>
+<h3>Customer Assistance</h3>
 
+<p>
+We help you through the property-selection journey
+from enquiry to decision.
+</p>
 
-          <article class="property-card">
+</div>
 
-            <div class="property-image two">
-              <div class="property-tag">Commercial</div>
-            </div>
 
-            <div class="property-info">
+</div>
 
-              <h3>
-                Commercial Spaces
-              </h3>
+</div>
 
-              <p>
-                Strategic commercial property options for businesses
-                and investors.
-              </p>
+</section>
 
-              <div class="property-bottom">
-                <strong>Enquire Now</strong>
-                <span>Available</span>
-              </div>
 
-            </div>
+<!-- PROPERTIES -->
 
-          </article>
+<section id="properties">
 
+<div class="container">
 
-          <article class="property-card">
+<div class="section-title">
 
-            <div class="property-image three">
-              <div class="property-tag">Investment</div>
-            </div>
+<small>Explore</small>
 
-            <div class="property-info">
+<h2>Our Properties</h2>
 
-              <h3>
-                Investment Opportunities
-              </h3>
+<p>
+Explore property categories and available projects.
+</p>
 
-              <p>
-                Property opportunities selected for long-term potential.
-              </p>
+</div>
 
-              <div class="property-bottom">
-                <strong>Enquire Now</strong>
-                <span>Limited</span>
-              </div>
 
-            </div>
+<div class="property-grid">
 
-          </article>
 
-        </div>
+<div class="property">
 
-      </div>
+<div class="property-img">
+🏙️
+</div>
 
-    </section>
+<div class="property-content">
 
+<h3>Dream City</h3>
 
-    <!-- WHY US -->
+<p>
+Residential development opportunities for
+modern living.
+</p>
 
-    <section class="why">
+<span class="property-tag">
+Residential
+</span>
 
-      <div class="container why-grid">
+</div>
 
-        <div>
+</div>
 
-          <div class="section-label">
-            Why Choose Us
-          </div>
 
-          <h2>
-            More than property. We build trust.
-          </h2>
+<div class="property">
 
-          <p class="why-intro">
-            Your property journey deserves clarity, honest guidance
-            and a team that understands your goals.
-          </p>
+<div class="property-img">
+📐
+</div>
 
-          <a href="#contact" class="btn btn-primary">
-            Start A Conversation
-          </a>
+<div class="property-content">
 
-        </div>
+<h3>Residential Plots</h3>
 
+<p>
+Plots for customers planning their dream home.
+</p>
 
-        <div class="why-list">
+<span class="property-tag">
+Plots
+</span>
 
-          <div class="why-item">
-            <strong>01 — Transparency</strong>
-            <p>
-              Clear communication throughout your property journey.
-            </p>
-          </div>
+</div>
 
-          <div class="why-item">
-            <strong>02 — Guidance</strong>
-            <p>
-              Practical assistance to help you make informed choices.
-            </p>
-          </div>
+</div>
 
-          <div class="why-item">
-            <strong>03 — Quality</strong>
-            <p>
-              Focus on worthwhile property opportunities and locations.
-            </p>
-          </div>
 
-          <div class="why-item">
-            <strong>04 — Commitment</strong>
-            <p>
-              A customer-first approach built around long-term trust.
-            </p>
-          </div>
+<div class="property">
 
-        </div>
+<div class="property-img">
+🏡
+</div>
 
-      </div>
+<div class="property-content">
 
-    </section>
+<h3>Luxury Villas</h3>
 
+<p>
+Modern villa opportunities for comfortable living.
+</p>
 
-    <!-- CTA -->
+<span class="property-tag">
+Villas
+</span>
 
-    <section class="cta">
+</div>
 
-      <div class="container">
+</div>
 
-        <div class="section-label">
-          Your Next Move Starts Here
-        </div>
 
-        <h2>
-          Looking for the right property?
-        </h2>
+<div class="property">
 
-        <p>
-          Tell us what you're looking for and our team will help you
-          explore suitable opportunities.
-        </p>
+<div class="property-img">
+🌳
+</div>
 
-        <a href="#contact" class="btn btn-primary">
-          Get In Touch
-        </a>
+<div class="property-content">
 
-      </div>
+<h3>Premium Lands</h3>
 
-    </section>
+<p>
+Land opportunities for residential and
+investment requirements.
+</p>
 
+<span class="property-tag">
+Land
+</span>
 
-    <!-- CONTACT -->
+</div>
 
-    <section id="contact">
+</div>
 
-      <div class="container">
 
-        <div class="section-heading">
+<div class="property">
 
-          <div class="section-label">
-            Contact Us
-          </div>
+<div class="property-img">
+🏢
+</div>
 
-          <h2>
-            Let's discuss your property goals.
-          </h2>
+<div class="property-content">
 
-          <p>
-            Have a question or looking for a property?
-            Send us an enquiry.
-          </p>
+<h3>Commercial Spaces</h3>
 
-        </div>
+<p>
+Property opportunities for businesses and
+commercial use.
+</p>
 
+<span class="property-tag">
+Commercial
+</span>
 
-        <div class="contact-grid">
+</div>
 
-          <div class="contact-info">
+</div>
 
-            <div class="contact-item">
 
-              <div class="contact-icon">☎</div>
+<div class="property">
 
-              <div>
-                <strong>Phone</strong>
-                <span>+91 63992 80001</span>
-              </div>
+<div class="property-img">
+🏘️
+</div>
 
-            </div>
+<div class="property-content">
 
+<h3>Upcoming Projects</h3>
 
-            <div class="contact-item">
+<p>
+Stay connected for new property opportunities.
+</p>
 
-              <div class="contact-icon">✉</div>
+<span class="property-tag">
+Projects
+</span>
 
-              <div>
-                <strong>Email</strong>
-                <span>Contact us for property enquiries</span>
-              </div>
+</div>
 
-            </div>
+</div>
 
 
-            <div class="contact-item">
+</div>
 
-              <div class="contact-icon">⌖</div>
+</div>
 
-              <div>
-                <strong>Location</strong>
-                <span>Punjab, India</span>
-              </div>
+</section>
 
-            </div>
 
-          </div>
+<!-- GALLERY -->
 
+<section class="gallery" id="gallery">
 
-          <form class="contact-form" id="contactForm">
+<div class="container">
 
-            <div class="form-row">
+<div class="section-title">
 
-              <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                required
-              >
+<small>Our Work</small>
 
-              <input
-                type="tel"
-                id="phone"
-                placeholder="Phone Number"
-                required
-              >
+<h2>Gallery</h2>
 
-            </div>
+<p>
+A glimpse of properties, projects and developments.
+</p>
 
+</div>
 
-            <input
-              type="email"
-              id="email"
-              placeholder="Email Address"
-            >
 
+<div class="gallery-grid">
 
-            <select id="interest">
+<div class="gallery-item">🏙️</div>
 
-              <option value="">
-                I'm interested in...
-              </option>
+<div class="gallery-item">🏡</div>
 
-              <option>
-                Residential Property
-              </option>
+<div class="gallery-item">🌳</div>
 
-              <option>
-                Commercial Property
-              </option>
+<div class="gallery-item">🏘️</div>
 
-              <option>
-                Investment Opportunity
-              </option>
+<div class="gallery-item">📐</div>
 
-              <option>
-                Property Consultation
-              </option>
+<div class="gallery-item">🏢</div>
 
-            </select>
+</div>
 
+</div>
 
-            <textarea
-              id="message"
-              placeholder="Tell us what you're looking for..."
-              required
-            ></textarea>
+</section>
 
 
-            <button
-              type="submit"
-              class="btn btn-primary submit-btn"
-            >
-              Send Enquiry
-            </button>
+<!-- CTA -->
 
-          </form>
+<section class="cta">
 
-        </div>
+<div class="container">
 
-      </div>
+<h2>
+Looking For Your Dream Property?
+</h2>
 
-    </section>
+<p>
+Let's discuss your requirements and find the right opportunity.
+</p>
 
-  </main>
+<a href="tel:6399280001" class="btn">
+Call 63992 80001
+</a>
 
+<a href="#contact" class="btn btn-outline">
+Contact Us
+</a>
 
-  <!-- FOOTER -->
+</div>
 
-  <footer>
+</section>
 
-    <div class="container">
 
-      <div class="footer-grid">
+<!-- CONTACT -->
 
-        <div>
+<section id="contact">
 
-          <div class="footer-logo">
-            DREAMLAND <span>DEVELOPERS</span>
-          </div>
+<div class="container">
 
-          <p>
-            Helping you discover property opportunities with
-            confidence, clarity and trust.
-          </p>
+<div class="section-title">
 
-        </div>
+<small>Get In Touch</small>
 
+<h2>Contact Us</h2>
 
-        <div>
+<p>
+Have a property requirement?
+Get in touch with Dream Land Developers.
+</p>
 
-          <h4>Quick Links</h4>
+</div>
 
-          <ul class="footer-links">
 
-            <li>
-              <a href="#home">Home</a>
-            </li>
+<div class="contact-grid">
 
-            <li>
-              <a href="#about">About</a>
-            </li>
 
-            <li>
-              <a href="#properties">Properties</a>
-            </li>
+<div class="contact-box">
 
-            <li>
-              <a href="#services">Services</a>
-            </li>
+<h3>Let's Talk Property</h3>
 
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
 
-          </ul>
+<div class="contact-item">
 
-        </div>
+<strong>Phone</strong>
 
+<span>63992 80001</span>
 
-        <div>
+</div>
 
-          <h4>Contact</h4>
 
-          <ul class="footer-links">
+<div class="contact-item">
 
-            <li>
-              <a href="tel:+916399280001">
-                +91 63992 80001
-              </a>
-            </li>
+<strong>Location</strong>
 
-            <li>
-              Punjab, India
-            </li>
+<span>66 Feet Road, Jalandhar</span>
 
-          </ul>
+</div>
 
-        </div>
 
-      </div>
+<div class="contact-item">
 
+<strong>Company</strong>
 
-      <div class="copyright">
-        © 2026 Dreamland Developers. All Rights Reserved.
-      </div>
+<span>Dream Land Developers</span>
 
-    </div>
+</div>
 
-  </footer>
 
+<div class="contact-buttons">
 
-  <!-- FLOATING CONTACT BUTTONS -->
+<a href="tel:6399280001" class="btn">
+Call Now
+</a>
 
-  <div class="floating">
+<a href="https://wa.me/916399280001"
+class="btn btn-outline"
+target="_blank">
 
-    <a
-      class="float-btn whatsapp"
-      href="https://wa.me/916399280001?text=Hello%20Dreamland%20Developers,%20I%20am%20interested%20in%20your%20property."
-      target="_blank"
-      rel="noopener"
-      aria-label="WhatsApp"
-    >
-      WA
-    </a>
+WhatsApp
 
-    <a
-      class="float-btn call"
-      href="tel:+916399280001"
-      aria-label="Call"
-    >
-      ☎
-    </a>
+</a>
 
-  </div>
+</div>
 
+</div>
 
-  <!-- JAVASCRIPT -->
 
-  <script>
+<div class="map-box">
 
-    /* Mobile menu */
+<div>
 
-    const menuBtn = document.getElementById("menuBtn");
-    const navLinks = document.getElementById("navLinks");
+<h3>
+📍 66 Feet Road, Jalandhar
+</h3>
 
-    menuBtn.addEventListener("click", function () {
-      navLinks.classList.toggle("active");
-    });
+<p>
+Visit or contact us to know more about
+available property opportunities.
+</p>
 
+</div>
 
-    /* Close mobile menu after clicking a link */
+</div>
 
-    document.querySelectorAll(".nav-links a").forEach(function (link) {
 
-      link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-      });
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<div class="footer-grid">
+
+
+<div>
+
+<h3>
+DREAM <span style="color:#d6a84f;">LAND</span>
+</h3>
+
+<p>
+Property opportunities for modern living,
+business and investment.
+</p>
+
+</div>
+
+
+<div>
+
+<h3>
+Quick Links
+</h3>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#services">Services</a></li>
+
+<li><a href="#properties">Properties</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+
+<div>
+
+<h3>
+Contact
+</h3>
+
+<ul>
+
+<li>63992 80001</li>
+
+<li>66 Feet Road</li>
+
+<li>Jalandhar</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 Dream Land Developers. All Rights Reserved.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList
+    .toggle("active");
+
+}
+
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        document
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
 
     });
 
+});
 
-    /* Contact form */
+</script>
 
-    document.getElementById("contactForm").addEventListener("submit", function (event) {
-
-      event.preventDefault();
-
-      const name = document.getElementById("name").value.trim();
-      const phone = document.getElementById("phone").value.trim();
-      const interest = document.getElementById("interest").value;
-      const message = document.getElementById("message").value.trim();
-
-      const text =
-        "Hello Dreamland Developers,%0A%0A" +
-        "Name: " + encodeURIComponent(name) + "%0A" +
-        "Phone: " + encodeURIComponent(phone) + "%0A" +
-        "Interest: " + encodeURIComponent(interest || "Not specified") + "%0A" +
-        "Message: " + encodeURIComponent(message);
-
-      window.open(
-        "https://wa.me/916399280001?text=" + text,
-        "_blank"
-      );
-
-    });
-
-  </script>
 
 </body>
 </html>
