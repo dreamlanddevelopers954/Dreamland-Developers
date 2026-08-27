@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Dream Land Developers | Premium Properties in Jalandhar</title>
+<title>Dream Land Developers | Properties in Jalandhar</title>
 
-<meta name="description" content="Dream Land Developers offers plots, villas, lands, residential and commercial property opportunities in Jalandhar.">
-<meta name="keywords" content="Dream Land Developers, properties in Jalandhar, plots in Jalandhar, villas in Jalandhar, land in Jalandhar, residential property, commercial property">
+<meta name="description" content="Dream Land Developers - Residential plots, villas, lands and commercial properties at 66 Feet Road, Jalandhar.">
 
 <style>
 
@@ -20,8 +19,8 @@
 
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background:#0b0f14;
-    color:#fff;
+    background:#080b0f;
+    color:white;
     line-height:1.6;
 }
 
@@ -36,34 +35,33 @@ a{
     margin:auto;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 
 nav{
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:1000;
-    background:rgba(5,8,12,.96);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+    z-index:9999;
+    background:rgba(8,11,15,0.96);
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.nav-inner{
+.navbar{
     height:75px;
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
 .logo{
-    font-size:22px;
+    font-size:23px;
     font-weight:800;
     letter-spacing:1px;
 }
 
 .logo span{
-    color:#d6a84f;
+    color:#d4a64a;
 }
 
 .nav-links{
@@ -75,141 +73,149 @@ nav{
 .nav-links a{
     color:#ddd;
     font-size:15px;
-    transition:.3s;
+    transition:0.3s;
 }
 
 .nav-links a:hover{
-    color:#d6a84f;
+    color:#d4a64a;
 }
 
-.menu-btn{
+.menu{
     display:none;
-    font-size:27px;
+    font-size:28px;
     cursor:pointer;
 }
 
 
-/* HERO */
+/* ================= HOME ================= */
 
-.hero{
+#home{
     min-height:100vh;
     display:flex;
     align-items:center;
-    background:
-    linear-gradient(rgba(4,7,10,.72),rgba(4,7,10,.90)),
-    radial-gradient(circle at center,#263445,#080b10 70%);
     padding-top:75px;
+
+    background:
+    linear-gradient(
+        rgba(3,6,9,0.72),
+        rgba(3,6,9,0.94)
+    ),
+    radial-gradient(
+        circle at 70% 40%,
+        #344252,
+        #080b0f 65%
+    );
 }
 
-.hero-content{
+.hero{
     max-width:850px;
 }
 
-.hero-small{
-    color:#d6a84f;
+.hero-label{
+    color:#d4a64a;
     text-transform:uppercase;
     letter-spacing:4px;
     font-size:14px;
-    margin-bottom:15px;
+    margin-bottom:18px;
 }
 
 .hero h1{
-    font-size:clamp(45px,7vw,82px);
-    line-height:1.05;
+    font-size:clamp(48px,7vw,82px);
+    line-height:1.04;
     margin-bottom:25px;
 }
 
 .hero h1 span{
-    color:#d6a84f;
+    color:#d4a64a;
 }
 
-.hero p{
-    color:#c7c7c7;
-    max-width:650px;
+.hero-text{
+    color:#b9b9b9;
+    max-width:680px;
     font-size:18px;
     margin-bottom:30px;
 }
 
 .btn{
     display:inline-block;
-    padding:14px 28px;
-    border-radius:4px;
-    background:#d6a84f;
-    color:#111;
+    padding:14px 27px;
+    background:#d4a64a;
+    color:#101010;
     font-weight:bold;
+    border-radius:5px;
     margin-right:10px;
-    transition:.3s;
+    margin-bottom:10px;
+    transition:0.3s;
 }
 
 .btn:hover{
     transform:translateY(-3px);
-    background:#f0c86e;
+    background:#edc56b;
 }
 
 .btn-outline{
     background:transparent;
-    color:#fff;
-    border:1px solid #d6a84f;
+    color:white;
+    border:1px solid #d4a64a;
 }
 
 
-/* STATS */
+/* ================= STATS ================= */
 
 .stats{
     display:flex;
-    gap:65px;
+    gap:60px;
     margin-top:45px;
 }
 
 .stat{
-    border-left:2px solid #d6a84f;
     padding-left:18px;
+    border-left:2px solid #d4a64a;
 }
 
 .stat h3{
+    color:#d4a64a;
     font-size:40px;
     line-height:1;
-    color:#d6a84f;
     margin-bottom:7px;
 }
 
 .stat p{
     color:#aaa;
     font-size:14px;
-    margin:0;
 }
 
 
-/* GENERAL */
+/* ================= GENERAL ================= */
 
 section{
     padding:100px 0;
 }
 
-.section-title{
+.section-heading{
     text-align:center;
     margin-bottom:55px;
 }
 
-.section-title small{
-    color:#d6a84f;
+.section-heading small{
+    color:#d4a64a;
     text-transform:uppercase;
     letter-spacing:3px;
 }
 
-.section-title h2{
-    font-size:42px;
+.section-heading h2{
+    font-size:43px;
     margin-top:8px;
 }
 
-.section-title p{
-    color:#aaa;
+.section-heading p{
+    color:#999;
     max-width:650px;
     margin:12px auto;
 }
 
 
-/* ABOUT */
+/* ================= ABOUT ================= */
 
 .about-grid{
     display:grid;
@@ -219,33 +225,38 @@ section{
 }
 
 .about-image{
-    min-height:420px;
-    border-radius:12px;
+    height:430px;
+    border-radius:14px;
+
     background:
-    linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.5)),
-    linear-gradient(135deg,#343b45,#111820);
+    linear-gradient(
+        135deg,
+        #394653,
+        #151b22
+    );
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:90px;
-    color:#d6a84f;
+
+    font-size:100px;
 }
 
-.about-text h3{
+.about-content h3{
     font-size:32px;
     margin-bottom:20px;
 }
 
-.about-text p{
+.about-content p{
     color:#aaa;
     margin-bottom:18px;
 }
 
 
-/* SERVICES */
+/* ================= SERVICES ================= */
 
-.services{
-    background:#0f141b;
+#services{
+    background:#0e1319;
 }
 
 .cards{
@@ -256,25 +267,25 @@ section{
 
 .card{
     background:#151b23;
-    border:1px solid rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,0.07);
     padding:35px 28px;
-    border-radius:12px;
-    transition:.3s;
+    border-radius:13px;
+    transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
-    border-color:#d6a84f;
+    transform:translateY(-7px);
+    border-color:#d4a64a;
 }
 
-.card-icon{
-    font-size:40px;
-    margin-bottom:20px;
+.icon{
+    font-size:42px;
+    margin-bottom:18px;
 }
 
 .card h3{
-    font-size:22px;
-    margin-bottom:12px;
+    font-size:21px;
+    margin-bottom:10px;
 }
 
 .card p{
@@ -282,7 +293,7 @@ section{
 }
 
 
-/* PROPERTIES */
+/* ================= PROPERTIES ================= */
 
 .property-grid{
     display:grid;
@@ -291,26 +302,33 @@ section{
 }
 
 .property{
-    background:#151b23;
-    border-radius:12px;
     overflow:hidden;
-    border:1px solid rgba(255,255,255,.07);
-    transition:.3s;
+    background:#151b23;
+    border:1px solid rgba(255,255,255,0.07);
+    border-radius:13px;
+    transition:0.3s;
 }
 
 .property:hover{
-    transform:translateY(-6px);
-    border-color:#d6a84f;
+    transform:translateY(-7px);
+    border-color:#d4a64a;
 }
 
-.property-img{
+.property-image{
     height:220px;
-    background:
-    linear-gradient(135deg,#414a56,#171c23);
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:55px;
+
+    font-size:65px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #3d4854,
+        #151b22
+    );
 }
 
 .property-content{
@@ -319,28 +337,28 @@ section{
 
 .property-content h3{
     font-size:24px;
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .property-content p{
     color:#999;
-    margin-bottom:18px;
+    margin-bottom:16px;
 }
 
-.property-tag{
+.tag{
     display:inline-block;
-    color:#d6a84f;
-    border:1px solid #d6a84f;
-    padding:5px 10px;
+    border:1px solid #d4a64a;
+    color:#d4a64a;
     border-radius:20px;
+    padding:4px 11px;
     font-size:12px;
 }
 
 
-/* GALLERY */
+/* ================= GALLERY ================= */
 
-.gallery{
-    background:#0f141b;
+#gallery{
+    background:#0e1319;
 }
 
 .gallery-grid{
@@ -351,15 +369,23 @@ section{
 
 .gallery-item{
     height:240px;
-    border-radius:10px;
-    overflow:hidden;
-    background:linear-gradient(135deg,#3c4651,#151b22);
+    border-radius:12px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #3b4652,
+        #151b22
+    );
+
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:50px;
-    color:#d6a84f;
-    transition:.3s;
+
+    font-size:60px;
+    color:#d4a64a;
+
+    transition:0.3s;
 }
 
 .gallery-item:hover{
@@ -367,22 +393,45 @@ section{
 }
 
 
-/* CONTACT */
+/* ================= CTA ================= */
+
+.cta{
+    text-align:center;
+    background:
+    linear-gradient(
+        135deg,
+        #202a35,
+        #090d12
+    );
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.cta p{
+    color:#999;
+    margin-bottom:28px;
+}
+
+
+/* ================= CONTACT ================= */
 
 .contact-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:50px;
+    gap:45px;
 }
 
 .contact-box{
     background:#151b23;
+    border-radius:13px;
     padding:35px;
-    border-radius:12px;
 }
 
 .contact-box h3{
-    font-size:28px;
+    font-size:29px;
     margin-bottom:25px;
 }
 
@@ -392,7 +441,7 @@ section{
 
 .contact-item strong{
     display:block;
-    color:#d6a84f;
+    color:#d4a64a;
     margin-bottom:4px;
 }
 
@@ -400,51 +449,35 @@ section{
     color:#bbb;
 }
 
-.contact-buttons{
-    margin-top:25px;
-}
-
 .map-box{
-    min-height:400px;
-    border-radius:12px;
-    background:linear-gradient(135deg,#252f3a,#10151b);
+    min-height:390px;
+    border-radius:13px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #29343f,
+        #10151b
+    );
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     text-align:center;
-    color:#aaa;
     padding:30px;
 }
 
 .map-box h3{
-    color:#fff;
     margin-bottom:10px;
 }
 
 
-/* CTA */
-
-.cta{
-    background:linear-gradient(135deg,#1d2630,#0c1015);
-    text-align:center;
-}
-
-.cta h2{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.cta p{
-    color:#aaa;
-    margin-bottom:30px;
-}
-
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
     background:#05070a;
-    padding:50px 0 25px;
+    padding:55px 0 25px;
 }
 
 .footer-grid{
@@ -460,7 +493,7 @@ footer h3{
 
 footer p,
 footer li{
-    color:#888;
+    color:#777;
 }
 
 footer ul{
@@ -472,26 +505,35 @@ footer li{
 }
 
 .copyright{
-    border-top:1px solid rgba(255,255,255,.08);
+    border-top:1px solid rgba(255,255,255,0.08);
     padding-top:20px;
     text-align:center;
-    color:#666;
+    color:#555;
     font-size:14px;
 }
 
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
 @media(max-width:850px){
+
+    .menu{
+        display:block;
+    }
 
     .nav-links{
         position:absolute;
         top:75px;
         left:0;
         width:100%;
-        background:#080b10;
+
+        background:#080b0f;
+
         flex-direction:column;
-        padding:25px;
+        gap:0;
+
+        padding:20px;
+
         display:none;
     }
 
@@ -499,8 +541,9 @@ footer li{
         display:flex;
     }
 
-    .menu-btn{
-        display:block;
+    .nav-links li{
+        padding:12px 0;
+        border-bottom:1px solid rgba(255,255,255,0.06);
     }
 
     .about-grid,
@@ -525,22 +568,16 @@ footer li{
 
 @media(max-width:550px){
 
-    .cards,
-    .property-grid,
-    .gallery-grid{
-        grid-template-columns:1fr;
+    .container{
+        width:92%;
     }
 
     .hero h1{
         font-size:46px;
     }
 
-    .section-title h2{
-        font-size:34px;
-    }
-
-    .btn{
-        margin-bottom:10px;
+    .hero-text{
+        font-size:16px;
     }
 
     .stats{
@@ -550,6 +587,21 @@ footer li{
     .stat h3{
         font-size:32px;
     }
+
+    .cards,
+    .property-grid,
+    .gallery-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-heading h2{
+        font-size:34px;
+    }
+
+    .cta h2{
+        font-size:32px;
+    }
+
 }
 
 </style>
@@ -559,17 +611,19 @@ footer li{
 <body>
 
 
-<!-- NAVIGATION -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
-<div class="container nav-inner">
+<div class="container navbar">
 
 <div class="logo">
 DREAM <span>LAND</span>
 </div>
 
-<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<div class="menu" onclick="toggleMenu()">
+☰
+</div>
 
 <ul class="nav-links" id="navLinks">
 
@@ -587,13 +641,15 @@ DREAM <span>LAND</span>
 </nav>
 
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
-<section class="hero" id="home">
+<section id="home">
 
-<div class="container hero-content">
+<div class="container">
 
-<div class="hero-small">
+<div class="hero">
+
+<div class="hero-label">
 Dream Land Developers
 </div>
 
@@ -602,10 +658,10 @@ Build Your <span>Dream.</span><br>
 Own Your Future.
 </h1>
 
-<p>
-Discover residential, commercial and investment
-property opportunities with Dream Land Developers.
-Find plots, villas, land and more in Jalandhar.
+<p class="hero-text">
+Discover residential and commercial property opportunities
+with Dream Land Developers. Explore plots, villas, lands,
+Dream City and more in Jalandhar.
 </p>
 
 <a href="#properties" class="btn">
@@ -616,8 +672,6 @@ Explore Properties
 Call 63992 80001
 </a>
 
-
-<!-- STATS -->
 
 <div class="stats">
 
@@ -635,23 +689,25 @@ Call 63992 80001
 
 </div>
 
+</div>
+
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
 <small>Who We Are</small>
 
 <h2>About Dream Land Developers</h2>
 
 <p>
-Building opportunities for better living and smarter property decisions.
+Your trusted destination for discovering property opportunities.
 </p>
 
 </div>
@@ -664,24 +720,23 @@ Building opportunities for better living and smarter property decisions.
 </div>
 
 
-<div class="about-text">
+<div class="about-content">
 
 <h3>Your Property. Your Dream.</h3>
 
 <p>
-Dream Land Developers is focused on helping customers
-discover residential and commercial property opportunities
-that match their requirements.
+Dream Land Developers focuses on providing customers
+with residential, commercial and land property opportunities.
 </p>
 
 <p>
-From plots and villas to land and other property options,
-our goal is to make the property-search experience simple,
-professional and transparent.
+Whether you are looking for a residential plot, villa,
+land, commercial space or a new project, we aim to make
+your property journey simple and professional.
 </p>
 
 <a href="#contact" class="btn">
-Talk To Us
+Contact Us
 </a>
 
 </div>
@@ -693,20 +748,20 @@ Talk To Us
 </section>
 
 
-<!-- SERVICES -->
+<!-- ================= SERVICES ================= -->
 
-<section class="services" id="services">
+<section id="services">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>What We Do</small>
+<small>What We Offer</small>
 
 <h2>Our Services</h2>
 
 <p>
-Property solutions designed around your needs.
+Property solutions designed to help you find the right opportunity.
 </p>
 
 </div>
@@ -717,13 +772,13 @@ Property solutions designed around your needs.
 
 <div class="card">
 
-<div class="card-icon">🏘️</div>
+<div class="icon">🏘️</div>
 
 <h3>Residential Properties</h3>
 
 <p>
-Explore residential plots, homes, villas and
-other property opportunities.
+Explore residential properties, homes and
+property opportunities for your future.
 </p>
 
 </div>
@@ -731,13 +786,13 @@ other property opportunities.
 
 <div class="card">
 
-<div class="card-icon">🏢</div>
+<div class="icon">📐</div>
 
-<h3>Commercial Properties</h3>
+<h3>Plots</h3>
 
 <p>
-Explore commercial property options suitable
-for business and investment requirements.
+Find residential plots suitable for building
+your dream home.
 </p>
 
 </div>
@@ -745,27 +800,13 @@ for business and investment requirements.
 
 <div class="card">
 
-<div class="card-icon">🌳</div>
-
-<h3>Land & Plots</h3>
-
-<p>
-Explore land and plot opportunities in different
-locations and sizes.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🏠</div>
+<div class="icon">🏡</div>
 
 <h3>Villas</h3>
 
 <p>
-Discover villa options designed for comfortable
-modern living.
+Discover modern villa opportunities designed
+for comfortable living.
 </p>
 
 </div>
@@ -773,27 +814,41 @@ modern living.
 
 <div class="card">
 
-<div class="card-icon">📋</div>
+<div class="icon">🌳</div>
+
+<h3>Land</h3>
+
+<p>
+Explore land opportunities for residential,
+commercial and investment requirements.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🏢</div>
+
+<h3>Commercial Properties</h3>
+
+<p>
+Explore commercial spaces and property options
+for your business requirements.
+</p>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🤝</div>
 
 <h3>Property Consultation</h3>
 
 <p>
-Get assistance in understanding property options
-according to your requirements.
-</p>
-
-</div>
-
-
-<div class="card">
-
-<div class="card-icon">🤝</div>
-
-<h3>Customer Assistance</h3>
-
-<p>
-We help you through the property-selection journey
-from enquiry to decision.
+Get assistance in understanding property
+options according to your requirements.
 </p>
 
 </div>
@@ -806,20 +861,20 @@ from enquiry to decision.
 </section>
 
 
-<!-- PROPERTIES -->
+<!-- ================= PROPERTIES ================= -->
 
 <section id="properties">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>Explore</small>
+<small>Explore Properties</small>
 
 <h2>Our Properties</h2>
 
 <p>
-Explore property categories and available projects.
+Explore different property categories and projects.
 </p>
 
 </div>
@@ -830,7 +885,7 @@ Explore property categories and available projects.
 
 <div class="property">
 
-<div class="property-img">
+<div class="property-image">
 🏙️
 </div>
 
@@ -843,7 +898,7 @@ Residential development opportunities for
 modern living.
 </p>
 
-<span class="property-tag">
+<span class="tag">
 Residential
 </span>
 
@@ -854,7 +909,7 @@ Residential
 
 <div class="property">
 
-<div class="property-img">
+<div class="property-image">
 📐
 </div>
 
@@ -863,10 +918,11 @@ Residential
 <h3>Residential Plots</h3>
 
 <p>
-Plots for customers planning their dream home.
+Plots for customers planning and building
+their dream homes.
 </p>
 
-<span class="property-tag">
+<span class="tag">
 Plots
 </span>
 
@@ -877,7 +933,7 @@ Plots
 
 <div class="property">
 
-<div class="property-img">
+<div class="property-image">
 🏡
 </div>
 
@@ -886,10 +942,11 @@ Plots
 <h3>Luxury Villas</h3>
 
 <p>
-Modern villa opportunities for comfortable living.
+Modern villa opportunities for comfortable
+and premium living.
 </p>
 
-<span class="property-tag">
+<span class="tag">
 Villas
 </span>
 
@@ -900,7 +957,7 @@ Villas
 
 <div class="property">
 
-<div class="property-img">
+<div class="property-image">
 🌳
 </div>
 
@@ -909,11 +966,11 @@ Villas
 <h3>Premium Lands</h3>
 
 <p>
-Land opportunities for residential and
-investment requirements.
+Land opportunities for different residential
+and investment requirements.
 </p>
 
-<span class="property-tag">
+<span class="tag">
 Land
 </span>
 
@@ -924,7 +981,7 @@ Land
 
 <div class="property">
 
-<div class="property-img">
+<div class="property-image">
 🏢
 </div>
 
@@ -933,11 +990,11 @@ Land
 <h3>Commercial Spaces</h3>
 
 <p>
-Property opportunities for businesses and
-commercial use.
+Commercial property opportunities for
+business requirements.
 </p>
 
-<span class="property-tag">
+<span class="tag">
 Commercial
 </span>
 
@@ -948,7 +1005,7 @@ Commercial
 
 <div class="property">
 
-<div class="property-img">
+<div class="property-image">
 🏘️
 </div>
 
@@ -957,10 +1014,11 @@ Commercial
 <h3>Upcoming Projects</h3>
 
 <p>
-Stay connected for new property opportunities.
+Stay connected with Dream Land Developers
+for upcoming opportunities.
 </p>
 
-<span class="property-tag">
+<span class="tag">
 Projects
 </span>
 
@@ -976,20 +1034,20 @@ Projects
 </section>
 
 
-<!-- GALLERY -->
+<!-- ================= GALLERY ================= -->
 
-<section class="gallery" id="gallery">
+<section id="gallery">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
-<small>Our Work</small>
+<small>Our Gallery</small>
 
 <h2>Gallery</h2>
 
 <p>
-A glimpse of properties, projects and developments.
+Explore our property and project gallery.
 </p>
 
 </div>
@@ -997,17 +1055,29 @@ A glimpse of properties, projects and developments.
 
 <div class="gallery-grid">
 
-<div class="gallery-item">🏙️</div>
+<div class="gallery-item">
+🏙️
+</div>
 
-<div class="gallery-item">🏡</div>
+<div class="gallery-item">
+🏡
+</div>
 
-<div class="gallery-item">🌳</div>
+<div class="gallery-item">
+🌳
+</div>
 
-<div class="gallery-item">🏘️</div>
+<div class="gallery-item">
+🏘️
+</div>
 
-<div class="gallery-item">📐</div>
+<div class="gallery-item">
+📐
+</div>
 
-<div class="gallery-item">🏢</div>
+<div class="gallery-item">
+🏢
+</div>
 
 </div>
 
@@ -1016,7 +1086,7 @@ A glimpse of properties, projects and developments.
 </section>
 
 
-<!-- CTA -->
+<!-- ================= CTA ================= -->
 
 <section class="cta">
 
@@ -1043,21 +1113,20 @@ Contact Us
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
 <div class="container">
 
-<div class="section-title">
+<div class="section-heading">
 
 <small>Get In Touch</small>
 
 <h2>Contact Us</h2>
 
 <p>
-Have a property requirement?
-Get in touch with Dream Land Developers.
+Have a property requirement? We would love to hear from you.
 </p>
 
 </div>
@@ -1098,18 +1167,19 @@ Get in touch with Dream Land Developers.
 </div>
 
 
-<div class="contact-buttons">
+<div style="margin-top:28px;">
 
-<a href="tel:6399280001" class="btn">
+<a
+href="tel:6399280001"
+class="btn">
 Call Now
 </a>
 
-<a href="https://wa.me/916399280001"
-class="btn btn-outline"
-target="_blank">
-
+<a
+href="https://wa.me/916399280001"
+target="_blank"
+class="btn btn-outline">
 WhatsApp
-
 </a>
 
 </div>
@@ -1126,8 +1196,8 @@ WhatsApp
 </h3>
 
 <p>
-Visit or contact us to know more about
-available property opportunities.
+Contact Dream Land Developers to know more
+about available property opportunities.
 </p>
 
 </div>
@@ -1142,7 +1212,7 @@ available property opportunities.
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
@@ -1154,12 +1224,14 @@ available property opportunities.
 <div>
 
 <h3>
-DREAM <span style="color:#d6a84f;">LAND</span>
+DREAM <span style="color:#d4a64a;">
+LAND
+</span>
 </h3>
 
 <p>
-Property opportunities for modern living,
-business and investment.
+Residential, commercial and land property
+opportunities in Jalandhar.
 </p>
 
 </div>
@@ -1223,6 +1295,8 @@ Contact
 </footer>
 
 
+<!-- ================= JAVASCRIPT ================= -->
+
 <script>
 
 function toggleMenu(){
@@ -1235,9 +1309,11 @@ function toggleMenu(){
 }
 
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+document
+.querySelectorAll(".nav-links a")
+.forEach(function(link){
 
-    link.addEventListener("click", () => {
+    link.addEventListener("click",function(){
 
         document
         .getElementById("navLinks")
@@ -1249,7 +1325,6 @@ document.querySelectorAll(".nav-links a").forEach(link => {
 });
 
 </script>
-
 
 </body>
 </html>
