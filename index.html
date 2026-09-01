@@ -67,15 +67,10 @@ nav{
     justify-content:space-between;
 }
 
-.logo{
-    color:#ffffff;
-    font-size:23px;
-    font-weight:800;
-    letter-spacing:1.5px;
-}
-
-.logo span{
-    font-weight:400;
+.logo img{
+    height:52px;
+    width:auto;
+    object-fit:contain;
 }
 
 .nav-links{
@@ -160,12 +155,7 @@ nav{
             rgba(0,0,0,.76),
             rgba(0,0,0,.88)
         ),
-        radial-gradient(
-            circle at 70% 40%,
-            #555555,
-            #111111 55%,
-            #000000
-        );
+        url("hero-section.jpg") center/cover no-repeat;
 }
 
 .hero-content{
@@ -251,17 +241,13 @@ section{
 
 .about-image{
     min-height:450px;
-    background:
-        linear-gradient(
-            135deg,
-            #eeeeee,
-            #999999
-        );
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:100px;
-    color:#222222;
+    overflow:hidden;
+}
+
+.about-image img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
 }
 
 .about-content h3{
@@ -373,6 +359,13 @@ section{
             #444444,
             #171717
         );
+    overflow:hidden;
+}
+
+.property-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .property-content{
@@ -425,10 +418,14 @@ section{
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:60px;
-    color:#222222;
     overflow:hidden;
     transition:.3s;
+}
+
+.gallery-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
 }
 
 .gallery-item:hover{
@@ -705,6 +702,14 @@ footer a:hover{
         min-height:300px;
     }
 
+    .about-image img{
+        height:300px;
+    }
+
+    .logo img{
+        height:45px;
+    }
+
 }
 
 </style>
@@ -723,7 +728,7 @@ footer a:hover{
 <div class="container navbar">
 
 <a href="#home" class="logo">
-DREAM <span>LAND DEVELOPERS</span>
+<img src="logo.jfif" alt="Dream Land Developers Logo">
 </a>
 
 <div class="menu" onclick="toggleMenu()">
@@ -808,7 +813,7 @@ opportunities for modern living and investment.
 <div class="about-grid">
 
 <div class="about-image">
-🏡
+<img src="gallery1.jfif" alt="Dream Land Developers Property">
 </div>
 
 <div class="about-content">
@@ -979,7 +984,7 @@ Explore our property categories and projects.
 <div class="property">
 
 <div class="property-image">
-🏙️
+<img src="dream-city.jpg" alt="Dream City">
 </div>
 
 <div class="property-content">
@@ -1002,7 +1007,7 @@ Residential
 <div class="property">
 
 <div class="property-image">
-▦
+<img src="gallery2.jfif" alt="Premium Residential Plots">
 </div>
 
 <div class="property-content">
@@ -1025,7 +1030,7 @@ Plots
 <div class="property">
 
 <div class="property-image">
-🏡
+<img src="gallery3.jfif" alt="Luxury Villas">
 </div>
 
 <div class="property-content">
@@ -1048,7 +1053,7 @@ Villas
 <div class="property">
 
 <div class="property-image">
-🌳
+<img src="gallery4.jfif" alt="Premium Land">
 </div>
 
 <div class="property-content">
@@ -1071,7 +1076,7 @@ Land
 <div class="property">
 
 <div class="property-image">
-▦
+<img src="commercial-property.jfif" alt="Commercial Property">
 </div>
 
 <div class="property-content">
@@ -1094,7 +1099,7 @@ Commercial
 <div class="property">
 
 <div class="property-image">
-◇
+<img src="gallery5.jfif" alt="Upcoming Projects">
 </div>
 
 <div class="property-content">
@@ -1144,17 +1149,33 @@ A glimpse of our properties, projects and developments.
 
 <div class="gallery-grid">
 
-<div class="gallery-item">🏙️</div>
+<div class="gallery-item">
+<img src="gallery1.jfif" alt="Dream Land Developers Gallery 1">
+</div>
 
-<div class="gallery-item">🏡</div>
+<div class="gallery-item">
+<img src="gallery2.jfif" alt="Dream Land Developers Gallery 2">
+</div>
 
-<div class="gallery-item">🌳</div>
+<div class="gallery-item">
+<img src="gallery3.jfif" alt="Dream Land Developers Gallery 3">
+</div>
 
-<div class="gallery-item">🏘️</div>
+<div class="gallery-item">
+<img src="gallery4.jfif" alt="Dream Land Developers Gallery 4">
+</div>
 
-<div class="gallery-item">▦</div>
+<div class="gallery-item">
+<img src="gallery5.jfif" alt="Dream Land Developers Gallery 5">
+</div>
 
-<div class="gallery-item">◇</div>
+<div class="gallery-item">
+<img src="gallery6.jfif" alt="Dream Land Developers Gallery 6">
+</div>
+
+<div class="gallery-item">
+<img src="gallery7.jfif" alt="Dream Land Developers Gallery 7">
+</div>
 
 </div>
 
