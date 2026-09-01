@@ -67,10 +67,24 @@ nav{
     justify-content:space-between;
 }
 
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#ffffff;
+    font-size:23px;
+    font-weight:800;
+    letter-spacing:1.5px;
+}
+
 .logo img{
-    height:52px;
-    width:auto;
+    width:48px;
+    height:48px;
     object-fit:contain;
+}
+
+.logo span{
+    font-weight:400;
 }
 
 .nav-links{
@@ -152,10 +166,10 @@ nav{
 
     background:
         linear-gradient(
-            rgba(0,0,0,.76),
-            rgba(0,0,0,.88)
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.84)
         ),
-        url("hero-section.jpg") center/cover no-repeat;
+        url("herosection.webp") center center / cover no-repeat;
 }
 
 .hero-content{
@@ -242,6 +256,7 @@ section{
 .about-image{
     min-height:450px;
     overflow:hidden;
+    background:#eeeeee;
 }
 
 .about-image img{
@@ -349,23 +364,19 @@ section{
 
 .property-image{
     height:230px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:65px;
-    background:
-        linear-gradient(
-            135deg,
-            #444444,
-            #171717
-        );
     overflow:hidden;
+    background:#171717;
 }
 
 .property-image img{
     width:100%;
-    height:100%;
+    height:230px;
     object-fit:cover;
+    transition:.3s;
+}
+
+.property:hover .property-image img{
+    transform:scale(1.04);
 }
 
 .property-content{
@@ -409,27 +420,24 @@ section{
 
 .gallery-item{
     height:250px;
-    background:
-        linear-gradient(
-            135deg,
-            #e5e5e5,
-            #999999
-        );
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    background:#eeeeee;
     overflow:hidden;
     transition:.3s;
 }
 
 .gallery-item img{
     width:100%;
-    height:100%;
+    height:250px;
     object-fit:cover;
+    transition:.3s;
 }
 
 .gallery-item:hover{
     transform:scale(1.02);
+}
+
+.gallery-item:hover img{
+    transform:scale(1.04);
 }
 
 
@@ -547,6 +555,12 @@ section{
     justify-content:center;
     text-align:center;
     padding:35px;
+    background:
+        linear-gradient(
+            rgba(0,0,0,.72),
+            rgba(0,0,0,.72)
+        ),
+        url("landproperty.jfif") center / cover no-repeat;
 }
 
 .map-box h3{
@@ -555,7 +569,7 @@ section{
 }
 
 .map-box p{
-    color:#aaaaaa;
+    color:#dddddd;
 }
 
 
@@ -663,6 +677,19 @@ footer a:hover{
         padding:80px 0;
     }
 
+    .navbar{
+        height:76px;
+    }
+
+    .logo{
+        font-size:20px;
+    }
+
+    .logo img{
+        width:42px;
+        height:42px;
+    }
+
     .hero h1{
         font-size:46px;
     }
@@ -706,10 +733,17 @@ footer a:hover{
         height:300px;
     }
 
-    .logo img{
-        height:45px;
-    }
+}
 
+
+/* =========================
+   IMAGE SAFETY
+========================= */
+
+.about-image img,
+.property-image img,
+.gallery-item img{
+    display:block;
 }
 
 </style>
@@ -728,7 +762,11 @@ footer a:hover{
 <div class="container navbar">
 
 <a href="#home" class="logo">
-<img src="logo.jfif" alt="Dream Land Developers Logo">
+
+<img src="dreamlandlogo.jfif" alt="Dream Land Developers Logo">
+
+DREAM <span>LAND DEVELOPERS</span>
+
 </a>
 
 <div class="menu" onclick="toggleMenu()">
@@ -813,7 +851,9 @@ opportunities for modern living and investment.
 <div class="about-grid">
 
 <div class="about-image">
-<img src="gallery1.jfif" alt="Dream Land Developers Property">
+
+<img src="about.jpg" alt="Dream Land Developers Property">
+
 </div>
 
 <div class="about-content">
@@ -984,7 +1024,9 @@ Explore our property categories and projects.
 <div class="property">
 
 <div class="property-image">
-<img src="dream-city.jpg" alt="Dream City">
+
+<img src="dreamcity.jpg" alt="Dream City Jalandhar">
+
 </div>
 
 <div class="property-content">
@@ -1007,7 +1049,9 @@ Residential
 <div class="property">
 
 <div class="property-image">
-<img src="gallery2.jfif" alt="Premium Residential Plots">
+
+<img src="landproperty.jfif" alt="Premium Residential Plots">
+
 </div>
 
 <div class="property-content">
@@ -1030,7 +1074,9 @@ Plots
 <div class="property">
 
 <div class="property-image">
-<img src="gallery3.jfif" alt="Luxury Villas">
+
+<img src="gallery1.jfif" alt="Luxury Villas">
+
 </div>
 
 <div class="property-content">
@@ -1053,7 +1099,9 @@ Villas
 <div class="property">
 
 <div class="property-image">
-<img src="gallery4.jfif" alt="Premium Land">
+
+<img src="gallery2.jfif" alt="Premium Land">
+
 </div>
 
 <div class="property-content">
@@ -1076,7 +1124,9 @@ Land
 <div class="property">
 
 <div class="property-image">
-<img src="commercial-property.jfif" alt="Commercial Property">
+
+<img src="commercial property.jfif" alt="Commercial Property">
+
 </div>
 
 <div class="property-content">
@@ -1099,7 +1149,9 @@ Commercial
 <div class="property">
 
 <div class="property-image">
-<img src="gallery5.jfif" alt="Upcoming Projects">
+
+<img src="gallery3.jfif" alt="Upcoming Projects">
+
 </div>
 
 <div class="property-content">
@@ -1149,33 +1201,51 @@ A glimpse of our properties, projects and developments.
 
 <div class="gallery-grid">
 
-<div class="gallery-item">
-<img src="gallery1.jfif" alt="Dream Land Developers Gallery 1">
-</div>
 
 <div class="gallery-item">
-<img src="gallery2.jfif" alt="Dream Land Developers Gallery 2">
+<img src="gallery1.jfif" alt="Dream Land Developers Gallery">
 </div>
 
-<div class="gallery-item">
-<img src="gallery3.jfif" alt="Dream Land Developers Gallery 3">
-</div>
 
 <div class="gallery-item">
-<img src="gallery4.jfif" alt="Dream Land Developers Gallery 4">
+<img src="gallery2.jfif" alt="Dream Land Developers Gallery">
 </div>
 
-<div class="gallery-item">
-<img src="gallery5.jfif" alt="Dream Land Developers Gallery 5">
-</div>
 
 <div class="gallery-item">
-<img src="gallery6.jfif" alt="Dream Land Developers Gallery 6">
+<img src="gallery3.jfif" alt="Dream Land Developers Gallery">
 </div>
 
+
 <div class="gallery-item">
-<img src="gallery7.jfif" alt="Dream Land Developers Gallery 7">
+<img src="gallery4.jfif" alt="Dream Land Developers Gallery">
 </div>
+
+
+<div class="gallery-item">
+<img src="gallery5.jfif" alt="Dream Land Developers Gallery">
+</div>
+
+
+<div class="gallery-item">
+<img src="gallery6.jfif" alt="Dream Land Developers Gallery">
+</div>
+
+
+<div class="gallery-item">
+<img src="gallery7.jfif" alt="Dream Land Developers Gallery">
+</div>
+
+
+<div class="gallery-item">
+<img src="gallery8.jfif" alt="Dream Land Developers Gallery">
+</div>
+
+
+<div class="gallery-item">
+<img src="dreamcity.jpg" alt="Dream City">
+</div>
+
 
 </div>
 
